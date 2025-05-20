@@ -50,3 +50,15 @@ table {
 }
 
 /* CSS RESET */ 
+
+:root {
+	--color1: #3257AD;
+	--color2: #48A9A6;
+	--color3: #E4DFDA;
+	--color4: #D4B483;
+	--color5: #C1666B;
+}
+
+body {
+	background-color: var(--color3);
+}
