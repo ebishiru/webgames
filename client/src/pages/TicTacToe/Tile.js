@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const Tile = ({value}) => {
+const Tile = ({value, onClick}) => {
 
     return (
-        <GameTile>{value}</GameTile>
+        <GameTile onClick={onClick}>{value}</GameTile>
     )
 }
 
