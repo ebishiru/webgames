@@ -1,4 +1,3 @@
-import Strike from "./Strike";
 import Tile from "./Tile";
 import styled from "styled-components";
 
@@ -15,7 +14,6 @@ const Board = ({tiles, onTileClick}) => {
             <Tile onClick={()=>{onTileClick(6)}} value={tiles[6]}/>
             <Tile onClick={()=>{onTileClick(7)}} value={tiles[7]}/>
             <Tile onClick={()=>{onTileClick(8)}} value={tiles[8]}/>
-            <Strike />
         </Gameboard>
     )
 }
@@ -23,6 +21,7 @@ const Board = ({tiles, onTileClick}) => {
 export default Board;
 
 const Gameboard = styled.div`
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
