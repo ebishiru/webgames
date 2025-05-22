@@ -17,6 +17,11 @@ const TicTacToe = () => {
     const [currentPlayer, setCurrentPlayer] = useState(randomizeStartingPlayer)
     const [gameStatus, setGameStatus] = useState("playing");
 
+    const winSound = new Audio('./audio/victory.mp3');
+    winSound.volume = 0.3;
+    const drawSound = new Audio('./audio/draw.mp3');
+    drawSound.volume = 0.2;
+    
 const handleClick = (index) => {
     //verify that game is still playing.
     if (gameStatus !== "playing") {
@@ -47,6 +52,7 @@ const handleClick = (index) => {
     for (let [a, b, c] of lines) {
         if (newTiles[a] && newTiles[a] === newTiles[b] && newTiles[a] === newTiles[c]) {
             setGameStatus("winner");
+            winSound.play();
             return;
         }
     }
@@ -54,6 +60,7 @@ const handleClick = (index) => {
     //verify draw condition
     if (newTiles.every(tile => tile)) {
         setGameStatus("draw");
+        drawSound.play();
         return;
     }
     
